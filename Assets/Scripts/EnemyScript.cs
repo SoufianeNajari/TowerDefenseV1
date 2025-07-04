@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
-public class enemyScript : MonoBehaviour
+public class EnemyScript : MonoBehaviour
 {
     
     public float moveSpeed;

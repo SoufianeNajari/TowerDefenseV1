@@ -16,7 +16,7 @@ public class MoneyManager : MonoBehaviour
     }
 
     //Event
-    public event Action<int> OnMoneyChanged;
+    public event Action OnMoneyChanged;
 
 
     public int money { get; private set; } = 10;
@@ -24,7 +24,7 @@ public class MoneyManager : MonoBehaviour
     public void AddMoney(int moneyToAdd)
     {
         money += moneyToAdd;
-        OnMoneyChanged?.Invoke(money);
+        OnMoneyChanged?.Invoke();
     }
 
     public bool UseMoney(int moneyToUse)
@@ -32,7 +32,7 @@ public class MoneyManager : MonoBehaviour
         if (money >= moneyToUse)
         {
             money -= moneyToUse;
-            OnMoneyChanged?.Invoke(money);
+            OnMoneyChanged?.Invoke();
             return true;
         }
         return false;

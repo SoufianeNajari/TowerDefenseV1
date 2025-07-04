@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using System;
 using System.Net;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -17,6 +18,10 @@ public class WaveManager : MonoBehaviour
         }
         Instance = this; 
     }
+
+    //Event
+    public event Action OnHealthChanged;
+
 
 
     public GameObject enemyPrefab;
@@ -42,7 +47,10 @@ public class WaveManager : MonoBehaviour
             return;
         }
         startPoint = path[0];
-        endPoint = path[path.Length - 1];
+        endPoint = path[^1];
+
+
+
     }
 
     // Update is called once per frame
@@ -60,8 +68,8 @@ public class WaveManager : MonoBehaviour
         if (timeSinceLastSpawn > spawnCooldown && enemySpawned < enemyCount)
         {
             timeSinceLastSpawn = 0;
-            GameObject enemy = Instantiate(enemyPrefab, startPoint);
-            enemy.GetComponent<enemyScript>().path = path;
+            GameObject enemy = Instantiate(enemyPrefab, startPoint.position, startPoint.rotation);
+            enemy.GetComponent<EnemyScript>().path = path;
             enemySpawned++;
         }
     }
@@ -69,6 +77,7 @@ public class WaveManager : MonoBehaviour
     public void HitCore()
     {
         healthCore--;
+        OnHealthChanged?.Invoke();
         print($"reste {healthCore} hp");
     }
 

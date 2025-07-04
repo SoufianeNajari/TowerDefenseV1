@@ -28,7 +28,7 @@ public class BulletScript : MonoBehaviour
 
             if (enemy.OverlapPoint(transform.position))
             {
-                enemy.gameObject.GetComponent<enemyScript>().Hit(bulletDamage);
+                enemy.gameObject.GetComponent<EnemyScript>().Hit(bulletDamage);
                 Destroy(gameObject);
             }
 
