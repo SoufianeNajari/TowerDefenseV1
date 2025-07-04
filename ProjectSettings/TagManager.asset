@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 3
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - TowerTiles
+  - Enemy
+  - Tower
+  - Grid
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Tiles
+    uniqueID: 1050505603
+    locked: 0
+  - name: MobAndTower
+    uniqueID: 2199328701
+    locked: 0
+  - name: TowerTiles
+    uniqueID: 3450262221
+    locked: 0
+  - name: UI / hp bar
+    uniqueID: 3173757455
+    locked: 0
+  m_RenderingLayers:
+  - Default
